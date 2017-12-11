@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
 import edu.upc.eetac.dsa.themovieapp.R;
 import edu.upc.eetac.dsa.themovieapp.model.Movie;
 

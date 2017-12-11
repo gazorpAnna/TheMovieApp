@@ -2,6 +2,7 @@ package edu.upc.eetac.dsa.themovieapp.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Button;
@@ -37,9 +38,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buscar = findViewById(R.id.button_buscar);
-        parametres = findViewById(R.id.parametres);
+        //buscar = findViewById(R.id.button_buscar);
+        //parametres = findViewById(R.id.parametres);
 
+       // recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        //recyclerView.setHasFixedSize(true);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        connectAndGetApiData();
 
     }
 
