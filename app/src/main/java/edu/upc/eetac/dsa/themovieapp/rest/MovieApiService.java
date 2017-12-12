@@ -6,10 +6,10 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 /**
- * Created by annag on 10/12/2017.
+ * Created by annag on 12/12/2017.
  */
 
 public interface MovieApiService {
-    @GET("movie/top_rated")
-    Call<MovieResponse> getTopRatedMovies(@Query("api_key") String apiKey);
+    @GET("/search/movie")
+    Call<MovieResponse> getSearch(@Query("api_key") String apiKey, @Query("query") String queryString);
 }
