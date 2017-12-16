@@ -39,7 +39,6 @@
         android:layout_marginStart="85dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Diga'm"
         app:layout_constraintBottom_toTopOf="@+id/button_buscar"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="85dp" />
