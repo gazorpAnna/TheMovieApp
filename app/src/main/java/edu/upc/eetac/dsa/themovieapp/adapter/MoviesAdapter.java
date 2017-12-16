@@ -38,9 +38,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
         LinearLayout moviesLayout;
         TextView movieTitle;
-        TextView data;
-        TextView movieDescription;
-        TextView rating;
+        //TextView data;
+        //TextView movieDescription;
+        //TextView rating;
         ImageView movieImage;
 
         public MovieViewHolder(View v) {
@@ -48,9 +48,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             moviesLayout = (LinearLayout) v.findViewById(R.id.movies_layout);
             movieImage = (ImageView) v.findViewById(R.id.movie_image);
             movieTitle = (TextView) v.findViewById(R.id.title);
-            data = (TextView) v.findViewById(R.id.date);
-            movieDescription = (TextView) v.findViewById(R.id.description);
-            rating = (TextView) v.findViewById(R.id.rating);
+            //data = (TextView) v.findViewById(R.id.date);
+            //movieDescription = (TextView) v.findViewById(R.id.description);
+            //rating = (TextView) v.findViewById(R.id.rating);
         }
     }
 
@@ -65,16 +65,18 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
     @Override
     public void onBindViewHolder(MovieViewHolder holder, final int position) {
-        String image_url = IMAGE_URL_BASE_PATH + movies.get(position).getPosterPath();
-        Picasso.with(context)
-                .load(image_url)
-                .placeholder(android.R.drawable.sym_def_app_icon)
-                .error(android.R.drawable.sym_def_app_icon)
-                .into(holder.movieImage);
-        holder.movieTitle.setText(movies.get(position).getTitle());
-        holder.data.setText(movies.get(position).getReleaseDate());
-        holder.movieDescription.setText(movies.get(position).getOverview());
-        holder.rating.setText(movies.get(position).getVoteAverage().toString());
+        if(!movies.isEmpty()) {
+            String image_url = IMAGE_URL_BASE_PATH + movies.get(position).getPosterPath();
+            Picasso.with(context)
+                    .load(image_url)
+                    .placeholder(android.R.drawable.sym_def_app_icon)
+                    .error(android.R.drawable.sym_def_app_icon)
+                    .into(holder.movieImage);
+            holder.movieTitle.setText(movies.get(position).getTitle());
+            //holder.data.setText(movies.get(position).getReleaseDate());
+            //holder.movieDescription.setText(movies.get(position).getOverview());
+            //holder.rating.setText(movies.get(position).getVoteAverage().toString());
+        }
     }
 
     @Override
